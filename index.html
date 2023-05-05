@@ -1,0 +1,115 @@
+
+<!DOCTYPE html> <html> <head> <meta charset="UTF-8"> <title>AI Demo</title> <link rel="stylesheet" href="style.css"> </head> 
+<style>
+	.container { margin: auto; width: 100%; 
+text-align: left; } 
+body{
+	padding:10px;
+	}
+	body{
+			Padding:10px;
+			Margin:10px;
+			box-shadow: 1px 1px 4px #0076ff;
+			}
+h1 { font-size: 2.5rem; }
+ input[type=text] {width:200px; padding: 12px ; margin: 0px ; box-sizing: 10px; border: 2px solid #ccc; border-radius: 4px; font-size: 1.2rem;}
+button { background-color: #0076ff; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1.2rem; 
+} 
+button:hover { background-color: #0076ff; } 
+#ai-response { font-size: 1.2rem; font-style: gras;} 
+img{
+	float:left;
+	padding:5px;
+	Width:50px;
+	 border-radius:200px;
+	}
+	.gg{
+		text-align:center;
+		float:center;
+		}
+    .gg2{u
+    	float:right;
+        float:top;
+        width:30px;
+        border-radius:150px;
+    }
+</style>
+<body> <div class="container">
+<img src="share.jpg" class="gg2">
+ <center><h3>Tsiory.Ai</h3> </center>
+<hr>
+<img src="bot.jpg">
+
+<p id="ai-response" class="gg"> ...Say something...</p>
+<p>Sorato zay tianao anotanina :</p> 
+</body>
+<input type="text" id="user-input">
+ <button onclick="respondToUser()">Ask</button>  
+</div>
+
+ <script>
+ 	
+ 
+const AI = {
+  name: "My AI",
+  greeting: "Hello, how can I assist you today?",
+  respondTo: function(input) {
+    input = input.toLowerCase(); 
+    //fiarabana
+    const miaraka = /kez|kz|kezkez|slt|salut/g; 
+    //veloma
+    const veloma= /bye|veloma|ciao/g;
+    //ratsy sy Tsara
+    const ratsy = /ratsy|tsy mlay/g; 
+    const tsara = /tsara|mlay|bg/g;
+    //createur
+    const createur = /namorina anao/g;
+    const tsiory= /tsiory akatsuki/g;
+    const tenyratsy= /fory|kdj|lln|lelena|lele|pory/g;
+   
+var x= " Tsiory ";
+    var y= "inona no azoko anampina anao?";
+    
+    
+  if(tsiory.test(input)){
+  	return " Tsiory Akatsuki dia olona izay namorina ahy,fatatra @ anarana hoe Tsilavina";
+  }
+ if(tenyratsy.test(input)){alert("Teny ratsy Detecté")
+ 	return " Aza miteny ratsy ry" + x;
+ }
+ if(veloma.test(input)){
+ 	return " veloma ry"+x+"amin ny manaraka ndray!"
+ }
+ if(createur.test(input)){
+    	return " Tsiory akatsuki";
+    }
+      if (tsara.test(input)) {
+      return   "Tena tsara ry"+ x +" ah";
+      }
+    
+    if (ratsy.test(input)) {
+      return "Tena ratsy beuh ry"+ x + "anh"; 
+    }
+    if (miaraka.test(input)) { 
+      return "Manaona" + x + y; 
+  
+    }
+else { 
+      return "Tsy azoko ny tia ny" + x + "ambara."; 
+    } 
+  }
+};
+
+function respondToUser() {
+  const userInput = document.getElementById("user-input").value;
+  const AIResponse = AI.respondTo(userInput);
+  document.getElementById("ai-response").innerHTML = AIResponse;
+}
+</script> </body> </html> 
+
+
+
+
+
+
+
